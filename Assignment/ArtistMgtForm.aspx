@@ -4,7 +4,7 @@
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="container">
            <asp:GridView runat="server" ID="imgGridView" AutoGenerateColumns="false" AllowPaging="true" OnRowCancelingEdit="imgGridView_RowCancelingEdit" DataKeyNames="ProductID" CellPadding="4" 
-      OnRowEditing="imgGridView_RowEditing" OnRowUpdating="imgGridView_RowUpdating" HeaderStyle-BackColor="Wheat">
+      OnRowEditing="imgGridView_RowEditing" OnRowUpdating="imgGridView_RowUpdating" HeaderStyle-BackColor="Wheat" OnSelectedIndexChanged="imgGridView_SelectedIndexChanged">
        <Columns>
            <asp:TemplateField HeaderText="Product Name" HeaderStyle-Width="200px">
                <ItemTemplate>
@@ -20,7 +20,7 @@
            </asp:TemplateField>
            <asp:TemplateField HeaderText="Image" HeaderStyle-Width="200px">
                <ItemTemplate>
-                   <asp:ImageButton ID="img" ImageUrl='<%#Eval("ProductImage") %>'  runat="server" Height="200px" Width="200px"
+                   <asp:ImageButton ID="img" ImageUrl='<%#Eval("ProductImage")+"?"+(DateTime.Now.ToString()) %>'  runat="server" Height="200px" Width="200px"
                        CommandArgument='<%#Eval("ProductID") %>' OnClick="img_Click"/>
                </ItemTemplate>
            </asp:TemplateField>

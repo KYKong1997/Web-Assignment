@@ -51,5 +51,10 @@ namespace Assignment
             int id = Int32.Parse((sender as ImageButton).CommandArgument);
             Response.Redirect("EditProduct.aspx?Id=" + id);
         }
+
+        protected void imgGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

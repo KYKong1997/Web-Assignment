@@ -6,6 +6,7 @@
     <siteMapNode url="faq.aspx" title="faq.aspx" description="FAQ"/>
     <siteMapNode url="~/contact.aspx" title="Contact" description="Contact"/>
     <siteMapNode url="~/ArtistMgtForm.aspx" title="Artist Management" description="Artist Management" />
-    <siteMapNode url="EditProduct.aspx" title="Edit Product" description="Edit Product" />
+    <siteMapNode url="~/EditProduct.aspx" title="Edit Product" description="Edit Product" />
+    <siteMapNode url="~/AddNewProduct.aspx" title="Add New Product" description="Add new product"/>
   </siteMapNode>
 </siteMap>
