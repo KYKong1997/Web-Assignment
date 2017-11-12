@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>MyArt Work Website</title>
+    <title>CH Arts Website</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -81,13 +81,13 @@
     </button>  
             </div>
             
-            <ul class="nav navbar-nav navbar-center" style="font-size:20px;">
+            <ul class="nav navbar-nav navbar-center" style="font-size:20px;font-family:'Lucida Sans';">
                 <li><a id="homePage" href="/WebForm1.aspx" class="ex1">HOME</a></li>
                 <li><a id="shopPage" href="/WebForm2.aspx" class="ex1">SHOP</a></li>
                 <li><a id-"blogPage" href="#" class="ex1">BLOG</a></li>
                 <li><a id="faqPage" href="#" class="ex1">FAQ</a></li>
                 <li><a id="contactPage" href="#" class="ex1">CONTACT</a></li>
-
+                <li><a id="locationPage" href="#" class="ex1">LOCATION</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="font-size:20px;">
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart">&nbsp;Cart</span></a></li>

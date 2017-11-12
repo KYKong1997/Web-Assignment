@@ -127,7 +127,6 @@
     <Content Include="WebForm2.aspx" />
     <Content Include="white.jpg" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -138,23 +137,6 @@
     <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistMgtForm.aspx.cs">
-      <DependentUpon>ArtistMgtForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArtistMgtForm.aspx.designer.cs">
-      <DependentUpon>ArtistMgtForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer.cs">
-      <DependentUpon>WebDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EditProduct.aspx.cs">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditProduct.aspx.designer.cs">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
