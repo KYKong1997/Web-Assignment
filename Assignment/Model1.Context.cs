@@ -13,10 +13,10 @@ namespace Assignment
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebDatabaseEntities1 : DbContext
+    public partial class WebDatabaseEntities2 : DbContext
     {
-        public WebDatabaseEntities1()
-            : base("name=WebDatabaseEntities1")
+        public WebDatabaseEntities2()
+            : base("name=WebDatabaseEntities2")
         {
         }
     

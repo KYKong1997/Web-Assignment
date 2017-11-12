@@ -46,7 +46,6 @@
           <Property Name="ProductUpdateDate" Type="datetime" Nullable="false" />
           <Property Name="ProductQty" Type="int" Nullable="false" />
           <Property Name="SellerID" Type="int" Nullable="false" />
-          <Property Name="ProductDescription" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Seller">
           <Key>
@@ -236,7 +235,6 @@
           <Property Name="ProductUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProductQty" Type="Int32" Nullable="false" />
           <Property Name="SellerID" Type="Int32" Nullable="false" />
-          <Property Name="ProductDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Product" FromRole="Product" ToRole="OrderDetails" />
           <NavigationProperty Name="Seller" Relationship="Self.FK_Product_Seller" FromRole="Product" ToRole="Seller" />
         </EntityType>
@@ -347,7 +345,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="WebDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WebDatabaseEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
@@ -385,7 +383,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WebDatabaseModelStoreContainer" CdmEntityContainer="WebDatabaseEntities1">
+        <EntityContainerMapping StorageEntityContainer="WebDatabaseModelStoreContainer" CdmEntityContainer="WebDatabaseEntities2">
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="WebDatabaseModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
@@ -427,7 +425,6 @@
                 <ScalarProperty Name="ProductUpdateDate" ColumnName="ProductUpdateDate" />
                 <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
                 <ScalarProperty Name="SellerID" ColumnName="SellerID" />
-                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

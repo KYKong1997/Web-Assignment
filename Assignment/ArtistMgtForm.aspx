@@ -10,7 +10,8 @@
                <ItemTemplate>
                    <asp:Label ID="lblName" runat="server" Text='<%#Eval("ProductName") %>'></asp:Label>
                </ItemTemplate>
-
+             
+            
            </asp:TemplateField>
            <asp:TemplateField HeaderText="Description" HeaderStyle-Width="200px">
                <ItemTemplate>

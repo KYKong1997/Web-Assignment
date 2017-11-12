@@ -4,7 +4,7 @@
     <siteMapNode url="~/WebForm2.aspx" title="Shopping Page"  description="Shopping Page" />
     <siteMapNode url="~/blogPage.aspx" title="Blog Page"  description="Blog Page" />
     <siteMapNode url="faq.aspx" title="faq.aspx" description="FAQ"/>
-    <siteMapNode url="~/contact.aspx" title="Contact" description="Contact"/>
+    <siteMapNode url="~/Contact.aspx" title="Contact" description="Contact"/>
     <siteMapNode url="~/ArtistMgtForm.aspx" title="Artist Management" description="Artist Management" />
     <siteMapNode url="EditProduct.aspx" title="Edit Product" description="Edit Product" />
   </siteMapNode>
