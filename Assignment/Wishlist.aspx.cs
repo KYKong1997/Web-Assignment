@@ -9,10 +9,10 @@ namespace Assignment
 {
     public partial class Wishlist : System.Web.UI.Page
     {
-        WebDatabaseEntities1 db;
+        WebDatabaseEntities db;
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = new WebDatabaseEntities1();
+            db = new WebDatabaseEntities();
 
             if (!IsPostBack)
             {

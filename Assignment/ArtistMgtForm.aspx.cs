@@ -10,11 +10,11 @@ namespace Assignment
 {
     public partial class ArtistMgtForm : System.Web.UI.Page
     {
-        WebDatabaseEntities1 db;
+        WebDatabaseEntities db;
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = new WebDatabaseEntities1();
-            
+            db = new WebDatabaseEntities();
+
             if (!IsPostBack)
             {
                 Product[] prods = db.Products.Where(x => x.SellerID.Equals(1000)).ToArray();
@@ -28,7 +28,7 @@ namespace Assignment
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void imgGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtistMgtForm.aspx.cs" Inherits="Assignment.ArtistMgtForm" MasterPageFile="~/Site1.Master"%>
+﻿<% @ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtistMgtForm.aspx.cs" Inherits="Assignment.ArtistMgtForm" MasterPageFile="~/Site1.Master"%>
 
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
