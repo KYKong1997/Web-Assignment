@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WebDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WebDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -42,10 +42,11 @@
           <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductName" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="ProductPrice" Type="money" Nullable="false" />
-          <Property Name="ProductImage" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ProductImage" Type="varchar" MaxLength="500" />
           <Property Name="ProductUpdateDate" Type="datetime" Nullable="false" />
           <Property Name="ProductQty" Type="int" Nullable="false" />
           <Property Name="SellerID" Type="int" Nullable="false" />
+          <Property Name="ProductDescription" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Seller">
           <Key>
@@ -183,8 +184,7 @@
             <End Role="Seller" EntitySet="Seller" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -231,12 +231,13 @@
           <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="ProductImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="ProductUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProductQty" Type="Int32" Nullable="false" />
           <Property Name="SellerID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Product" FromRole="Product" ToRole="OrderDetails" />
           <NavigationProperty Name="Seller" Relationship="Self.FK_Product_Seller" FromRole="Product" ToRole="Seller" />
+          <Property Name="ProductDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Seller">
           <Key>
@@ -418,6 +419,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="WebDatabaseModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />

@@ -10,20 +10,22 @@
                <ItemTemplate>
                    <asp:Label ID="lblName" runat="server" Text='<%#Eval("ProductName") %>'></asp:Label>
                </ItemTemplate>
-             
+            
             
            </asp:TemplateField>
-           <asp:TemplateField HeaderText="Description" HeaderStyle-Width="200px">
-               <ItemTemplate>
-                   <asp:Label ID="lblDescription" runat="server" Text='<%#Eval("ProductDescription") %>'></asp:Label>
-               </ItemTemplate>
-
-           </asp:TemplateField>
+       
            <asp:TemplateField HeaderText="Image" HeaderStyle-Width="200px">
                <ItemTemplate>
                    <asp:ImageButton ID="img" ImageUrl='<%#Eval("ProductImage") %>'  runat="server" Height="200px" Width="200px"
                        CommandArgument='<%#Eval("ProductID") %>' OnClick="img_Click"/>
                </ItemTemplate>
+           </asp:TemplateField>
+           
+           <asp:TemplateField HeaderText="Description" HeaderStyle-Width="200px">
+               <ItemTemplate>
+                   <asp:Label ID="lblDescription" runat="server" Text='<%#Eval("ProductDescription") %>'></asp:Label>
+               </ItemTemplate>
+
            </asp:TemplateField>
 
        </Columns>
