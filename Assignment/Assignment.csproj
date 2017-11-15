@@ -80,6 +80,8 @@
     <Content Include="App_Data\WebDatabase.mdf" />
     <Content Include="App_Data\WebDatabase_log.ldf" />
     <Content Include="ArtistMgtForm.aspx" />
+    <Content Include="background.jpg" />
+    <Content Include="CreateUser.aspx" />
     <Content Include="DynamicData\EntityTemplates\Default.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
@@ -104,6 +106,7 @@
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="EditProduct.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
@@ -174,6 +177,13 @@
     </Compile>
     <Compile Include="ArtistMgtForm.aspx.designer.cs">
       <DependentUpon>ArtistMgtForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
@@ -348,6 +358,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
