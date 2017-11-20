@@ -1,0 +1,232 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site3.master.cs" Inherits="Assignment.Site3" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <title>CH Arts Gallery</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+   
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    
+
+    <style>
+        .dropbtn {
+    background-color:white;
+    color: #B99867;
+    padding: 16px;
+    font-size: 16pt;
+    border: none;
+    cursor: pointer;
+    padding-bottom:20px
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:lightgrey;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color:white}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+      
+       .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #B99867;}
+       .navbar-default{
+           border:0;
+       }
+       .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li:active{
+           border:0;
+           background-color:transparent;
+       }
+        table.EditForm { border-spacing: 5px;/*use to work like cellspacing */
+      width : 200px;
+      height:200px;   
+     } 
+
+    th, td { padding: 5px; } 
+
+    .loginModalContainer{
+        padding:30px;
+        max-width:350px;
+        width:100%;
+        background-color:aliceblue;
+        margin:0 auto;
+        border-radius:2px;
+        box-shadow:0px 2px 2px rgba(0,0,0,0.3);
+        overflow:hidden;
+        font-family:'Times New Roman';
+    }
+    .loginModalContainer input[type=submit]{
+        width:100px;
+        display:block;
+        margin-bottom:10px;
+        position:relative;
+    }
+    .loginModalContainer input[type=text],input[type=password]{
+        height:44px;
+        font-size:16px;
+        width:100%;
+        background:#ffffff;
+        border:1px solid #d9d9d9;
+        border-top:1px solid #ffffff;
+        padding: 8px;
+        box-sizing:border-box;
+
+       
+        
+    }
+    .loginModalContainerSubmit{
+        border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+
+    }
+    .spath{
+        padding-left:160px
+    }
+     .foot{
+            font-size:8pt;
+           color:white;
+           background-color:brown;
+             position:absolute;
+              bottom:0;
+             width:100%;
+             height:17px;   /* Height of the footer */
+        }
+   
+    </style>
+   
+    <script>
+        function submitBtn() {
+          
+        }
+        $(document).ready(function () {
+            var path = window.location.pathname;
+            var page = path.substr(path.lastIndexOf("/") + 1).split(".", 1);
+            var formname = page[0].toString();
+           
+            if (formname == "ArtistMgtForm") {
+                document.getElementById("homePage").style.color = "#B99867";
+            }
+            else if (formname =="/AddNewProduct"){
+                document.getElementById("addNewProductPage").style.color = "#B99867";
+            }
+            else if (formname == "Faq") {
+                document.getElementById("faqPage").style.color = "#B99867";
+            }
+            else if (formname == "Location") {
+                document.getElementById("locationPage").style.color = "#B99867";
+            }
+            else if(formname=="Contact"){
+                document.getElementById("contactPage").style.color = "#B99867";
+            }
+        });
+
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.rawgit.com/elevateweb/elevatezoom/master/jquery.elevateZoom-3.0.8.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("[id*=img] ").elevateZoom({
+            cursor: 'pointer',
+            imageCrossfade: true,
+            loadingIcon: 'loading.gif'
+        });
+        });
+    $(document).ready(function(){
+        $('.selectpicker').selectpicker();
+    })
+</script>
+</head>
+<body>
+    
+        <div class="wrap">
+            <img src="white.jpg" style="width:50px;height:50px;" />
+        </div>
+    <form id="form1" runat="server">
+        <div>
+             <nav class="navbar navbar-default" style="background-color:#ffffff; height:50px;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-left" href="#" style="padding:0px"><img src="logo.png" style="height:100%;display:inline-block;"/></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>  
+            </div>
+            
+            <ul class="nav navbar-nav navbar-center" style="font-size:20px;">
+                <li><a id="homePage" href="/Artist/ArtistMgtForm.aspx" class="ex1">Home</a></li>
+                <li><a href="/Artist/AddNewProduct.aspx" id="addNewProductPage">Add New Product</a></li>
+                <li><a id="faqPage" href="/Artist/Faq.aspx" class="ex1">FAQ</a></li>
+                <li><a id="contactPage" href="/Artist/Contact.aspx" class="ex1">Contact Us</a></li>
+                <li><a id="locationPage" href="/Artist/Location.aspx" class="ex1">Location</a></li>
+
+            </ul>
+            
+       
+            <ul class="nav navbar-nav navbar-right" style="font-size:20px;">
+                <li><a href="/Customer/addedcart.aspx"><span class="glyphicon glyphicon-shopping-cart">&nbsp;Cart</span></a></li>
+                <li><asp:Label ID="logInLabel" runat="server"><span class="glyphicon glyphicon-log-in"></span></asp:Label></li>
+                <li><asp:Button ID="signOutBtn" runat="server" Text="Log In" CssClass="btn btn-group-lg" OnClick="loginLinkBtn_Click" Visible="true"/></li>
+            </ul>
+        </div>
+    </nav>
+        <asp:SiteMapPath class="spath" ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" / ">
+            <CurrentNodeStyle ForeColor="#cccccc"/>
+            <NodeStyle Font-Bold="True" ForeColor="#7C6F57" Font-Size="Large" />
+            <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+            <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+            
+        </asp:SiteMapPath>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+          
+        </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+     <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Copyright 2016-2017 Chin Hui Corporation (1234-T) All Right reserved.</span>
+      </div>
+    </footer>
+</body>
+
+</html>

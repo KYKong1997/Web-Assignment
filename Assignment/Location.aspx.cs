@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Assignment
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Location : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

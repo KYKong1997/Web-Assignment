@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace Assignment
 {
@@ -11,7 +12,16 @@ namespace Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text= HttpContext.Current.User.Identity.Name;
+
+            if (!Page.IsPostBack)
+            {
+                string[] gv = Roles.GetAllRoles();
+
+                if (!Roles.RoleExists("Customer"))
+                {
+                    Roles.CreateRole("Customer");
+                }
+            }
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
@@ -51,8 +61,19 @@ namespace Assignment
                 db.Sellers.Add(s);
             }
             db.Users.Add(user);
-           
+
             db.SaveChanges();
+
+            
+            if (user.RoleID.Equals("S"))
+            {
+                Roles.AddUserToRole(user.username, "Seller");
+            }
+            else
+            {
+                Roles.AddUserToRole(user.username, "Customer");
+            }
+            Response.Redirect("default.aspx");
         }
 
         protected void CreateUserWizard1_CreateUserError(object sender, CreateUserErrorEventArgs e)

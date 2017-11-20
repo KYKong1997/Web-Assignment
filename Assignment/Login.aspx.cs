@@ -22,9 +22,16 @@ namespace Assignment
 
         protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
         {
+            FormsAuthentication.SetAuthCookie(Login1.UserName, false);
+            if (Roles.IsUserInRole(Login1.UserName, "Seller"))
+            {
+                Response.Redirect("/Artist/ArtistMgtForm.aspx");
+            }
+            else
+            {
+                Response.Redirect("default.aspx");
+            }
 
-            FormsAuthentication.SetAuthCookie(Login1.UserName,false);
-            Response.Redirect("/WebForm1.aspx");
         }
 
         protected void password_TextChanged(object sender, EventArgs e)
@@ -34,7 +41,12 @@ namespace Assignment
 
         protected void submitBtn_Click(object sender, EventArgs e)
         {
+           
+        }
 
+        protected void registrationBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/CreateUser.aspx");
         }
     }
 }

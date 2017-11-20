@@ -1,9 +1,17 @@
-﻿<%@ Page Language="C#" UnobtrusiveValidationMode="None"  AutoEventWireup="true" CodeBehind="AddNewProduct.aspx.cs" Inherits="Assignment.AddNewProduct" MasterPageFile="~/Site1.Master"%>
+﻿<%@ Page Language="C#" UnobtrusiveValidationMode="None"  AutoEventWireup="true" CodeBehind="AddNewProduct.aspx.cs" Inherits="Assignment.AddNewProduct" MasterPageFile="~/Site3.Master"%>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder2" ID="content3" runat="server">
      <br />
     <br />
     <br />
+     <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+   
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+
+    <div class="container">
 
     <div class="container">
       

@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url="~/WebForm1.aspx" title="Homepage"  description="Homepage">
-    <siteMapNode url="~/WebForm2.aspx" title="Shopping Page"  description="Shopping Page" />
-    <siteMapNode url="~/blogPage.aspx" title="Blog Page"  description="Blog Page" />
-    <siteMapNode url="faq.aspx" title="faq.aspx" description="FAQ"/>
-    <siteMapNode url="~/contact.aspx" title="Contact" description="Contact"/>
-    <siteMapNode url="~/ArtistMgtForm.aspx" title="Artist Management" description="Artist Management" />
-    <siteMapNode url="~/EditProduct.aspx" title="Edit Product" description="Edit Product" />
-    <siteMapNode url="~/AddNewProduct.aspx" title="Add New Product" description="Add new product"/>
+  <siteMapNode url="~/Homepage.aspx" title="Homepage"  description="Homepage">
+    <siteMapNode url="~/Customer/Shopping.aspx" title="Shopping Page"  description="Shopping Page" />
+    <siteMapNode url="~/Faq.aspx" title="Frequently Asked Question" description="FAQ"/>
+    <siteMapNode url="~/Customer/Wishlist.aspx" title="Your Wishlist" description="Wishlist "/>
+    <siteMapNode url="~/Customer/PurchaseHistory.aspx" title="Your Purchase History" description="Purchase History"/>
+    <siteMapNode url="~/Contact.aspx" title="Contact Info" description="Contact"/>
+    <siteMapNode url="~/Location.aspx" title="Location"  description="Location" />
+    <siteMapNode url="~/Artist/ArtistMgtForm.aspx" title="Artist Management" description="Artist Management" />
+    <siteMapNode url="~/Artist/EditProduct.aspx" title="Edit Product" description="Edit Product" />
+    <siteMapNode url="~/Artist/AddNewProduct.aspx" title="Add New Product" description="Add new product"/>
   </siteMapNode>
 </siteMap>

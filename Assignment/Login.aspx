@@ -12,24 +12,18 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+           
             $("#loginModal").modal('show');
         });
+
     </script>
     <style>
         html,body{
             background: url(background.jpg) no-repeat center center fixed;
              background-size: cover;
         }
-        .center-block{
-            display:inline-block;
-            margin-left:auto;
-            margin-right:auto;
-           
-            margin: auto;
-           position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-           
-        }
+        
+       
       
     </style>
 </head>
@@ -37,26 +31,26 @@
 <body>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal" hidden="hidden"></button>
     <form runat="server">
-       <div class="modal fade" id="loginModal" role="dialog">
+       <div class="modal fade col-lg-12" id="loginModal" role="dialog" data-keyboard="false" data-backdrop="static">
            <div class="modal-dialog">
                <div class="modal-content">
                     <div class="container" style="width: auto; margin: 0 10%;">
-            <div class="center-block">
-                    <div class="row">
-            <div class="col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
+           
+                    
+           
+                <div class="panel"  style="width:100%">
+                    <div class="panel-heading" style="width:100%">
                         <strong>CH Artwork Login Page</strong>
                     </div>
 
-                    <div class="panel-body">
-                        <div class="tab-content">
-                           <asp:Login ID="Login1" runat="server">
+                    <div class="panel-body" style="width:100%">
+                       
+                           <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate1">
                                <LayoutTemplate>
-                                   <div class="tab-pane fade in active register">
-                                       <div class="container-fluid">
-                                           <div class="row">
-                                               <div class="col-xs-12 col-sm-12 col-md-12">
+                                  
+                                      
+                                           <div>
+                                               
                                                    <div class="form-group">
                                                        <div class="input-group">
                                                            <div class="input-group-addon">
@@ -66,10 +60,10 @@
                                                        </div>
                                                    </div>
                                                </div>
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-xs-12 col-sm-12 col-md-12">
-                                                   <div class="form-group">
+                                          
+                                           <div>
+                                              
+                                                   <div class="form-group" style="min-width:100%">
                                                        <div class="input-group">
                                                            <div class="input-group-addon">
                                                                <span class="glyphicon glyphicon-lock"></span>
@@ -78,22 +72,23 @@
                                                        </div>
                                                    </div>
                                                </div>
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-xs-12 col-sm-12 col-md-12">
+                                           
+                                           <div>
+                                              
                                                    <asp:Button ID="submitBtn" runat="server" CommandName="Login" CssClass="btn btn-success btn-block btn-lg" Text="Login" OnClick="submitBtn_Click"/>
-                                               </div>
+                                               <asp:Button ID="registrationBtn" runat="server" CommandName="Registration" CssClass="btn btn-success btn-block btn-lg" Text="Register Account" OnClick="registrationBtn_Click" />
+                                             
                                            </div>
                                        </div>
                                    </div>
                                </LayoutTemplate>
                            </asp:Login>
                         </div>
-                    </div>
-                </div>
+                   
+                
             </div>
-        </div>
-            </div>
+       
+            
         </div>
                </div>
            </div>

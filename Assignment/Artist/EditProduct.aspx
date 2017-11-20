@@ -1,9 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="Assignment.EditProduct"  MasterPageFile="~/Site1.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="Assignment.EditProduct"  MasterPageFile="~/Site3.Master"%>
 
 <asp:Content ID="content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <br />
     <br />
     <br />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+   
+    <script src="../Scripts/bootstrap.min.js"></script>
+
 
     <div class="container">
        

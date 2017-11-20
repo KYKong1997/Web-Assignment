@@ -18,6 +18,9 @@
         <AssociationConnector Association="WebDatabaseModel.FK_OrderDetails_Product" ManuallyRouted="false" />
         <AssociationConnector Association="WebDatabaseModel.FK_Product_Seller" ManuallyRouted="false" />
         <AssociationConnector Association="WebDatabaseModel.FK_Seller_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebDatabaseModel.Wishlist" Width="1.5" PointX="7.5" PointY="6.5" />
+        <AssociationConnector Association="WebDatabaseModel.FK_Wishlist_Customer" />
+        <AssociationConnector Association="WebDatabaseModel.FK_Wishlist_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

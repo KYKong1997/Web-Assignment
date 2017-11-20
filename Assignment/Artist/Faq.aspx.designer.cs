@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment {
+namespace Assignment.Artist {
     
     
-    public partial class WebForm2 {
+    public partial class Faq {
     }
 }

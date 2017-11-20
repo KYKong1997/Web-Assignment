@@ -10,7 +10,7 @@
 namespace Assignment {
     
     
-    public partial class Site1 {
+    public partial class Site3 {
         
         /// <summary>
         /// head control.

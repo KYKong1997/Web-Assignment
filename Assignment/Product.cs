@@ -18,6 +18,7 @@ namespace Assignment
         public Product()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public int ProductID { get; set; }
@@ -32,5 +33,7 @@ namespace Assignment
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual Seller Seller { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }

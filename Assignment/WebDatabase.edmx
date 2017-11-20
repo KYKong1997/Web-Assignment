@@ -18,7 +18,7 @@
             <PropertyRef Name="orderNumber" />
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="OrderDetailsNo" Type="int" Nullable="false" />
+          <Property Name="OrderDetailsNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="orderNumber" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="qtyOrdered" Type="int" Nullable="false" />
@@ -78,6 +78,17 @@
           <Property Name="Postal Code" Type="int" Nullable="false" />
           <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="phoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wishlist">
+          <Key>
+            <PropertyRef Name="WishlistID" />
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="WishlistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Customer_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -151,6 +162,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Wishlist_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Wishlist_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="WebDatabaseModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
@@ -159,6 +194,7 @@
           <EntitySet Name="Seller" EntityType="Self.Seller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wishlist" EntityType="Self.Wishlist" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Customer_User" Association="Self.FK_Customer_User">
             <End Role="User" EntitySet="User" />
             <End Role="Customer" EntitySet="Customer" />
@@ -183,6 +219,14 @@
             <End Role="User" EntitySet="User" />
             <End Role="Seller" EntitySet="Seller" />
           </AssociationSet>
+          <AssociationSet Name="FK_Wishlist_Customer" Association="Self.FK_Wishlist_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Wishlist" EntitySet="Wishlist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wishlist_Product" Association="Self.FK_Wishlist_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Wishlist" EntitySet="Wishlist" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -196,6 +240,7 @@
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Customer_User" FromRole="Customer" ToRole="User" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customer" FromRole="Customer" ToRole="Orders" />
+          <NavigationProperty Name="Wishlists" Relationship="WebDatabaseModel.FK_Wishlist_Customer" FromRole="Customer" ToRole="Wishlist" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -238,6 +283,7 @@
           <Property Name="ProductDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Product" FromRole="Product" ToRole="OrderDetails" />
           <NavigationProperty Name="Seller" Relationship="Self.FK_Product_Seller" FromRole="Product" ToRole="Seller" />
+          <NavigationProperty Name="Wishlists" Relationship="WebDatabaseModel.FK_Wishlist_Product" FromRole="Product" ToRole="Wishlist" />
         </EntityType>
         <EntityType Name="Seller">
           <Key>
@@ -378,7 +424,53 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Seller" EntitySet="Sellers" />
           </AssociationSet>
+          <EntitySet Name="Wishlists" EntityType="WebDatabaseModel.Wishlist" />
+          <AssociationSet Name="FK_Wishlist_Customer" Association="WebDatabaseModel.FK_Wishlist_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Wishlist" EntitySet="Wishlists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wishlist_Product" Association="WebDatabaseModel.FK_Wishlist_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Wishlist" EntitySet="Wishlists" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Wishlist">
+          <Key>
+            <PropertyRef Name="WishlistID" />
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="WishlistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="WebDatabaseModel.FK_Wishlist_Customer" FromRole="Wishlist" ToRole="Customer" />
+          <NavigationProperty Name="Product" Relationship="WebDatabaseModel.FK_Wishlist_Product" FromRole="Wishlist" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Wishlist_Customer">
+          <End Type="WebDatabaseModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="WebDatabaseModel.Wishlist" Role="Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Wishlist_Product">
+          <End Type="WebDatabaseModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="WebDatabaseModel.Wishlist" Role="Wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Wishlist">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -461,6 +553,16 @@
                 <ScalarProperty Name="Postal_Code" ColumnName="Postal Code" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wishlists">
+            <EntityTypeMapping TypeName="WebDatabaseModel.Wishlist">
+              <MappingFragment StoreEntitySet="Wishlist">
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="WishlistID" ColumnName="WishlistID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -76,12 +76,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddNewProduct.aspx" />
+    <Content Include="Artist\Contact.aspx" />
+    <Content Include="Artist\Faq.aspx" />
+    <Content Include="Artist\Location.aspx" />
+    <Content Include="Artist\logo.png" />
+    <Content Include="Artist\white.jpg" />
+    <Content Include="Customer\addedcart.aspx" />
+    <Content Include="Artist\AddNewProduct.aspx" />
     <Content Include="App_Data\WebDatabase.mdf" />
     <Content Include="App_Data\WebDatabase_log.ldf" />
-    <Content Include="ArtistMgtForm.aspx" />
+    <Content Include="Artist\ArtistMgtForm.aspx" />
     <Content Include="background.jpg" />
+    <Content Include="Customer\Cart.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="Customer\logo.png" />
+    <Content Include="Customer\white.jpg" />
+    <Content Include="default.aspx" />
     <Content Include="DynamicData\EntityTemplates\Default.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
     <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
@@ -105,16 +116,24 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
-    <Content Include="EditProduct.aspx" />
+    <Content Include="Artist\EditProduct.aspx" />
+    <Content Include="Faq.aspx" />
+    <Content Include="image1.jpg" />
+    <Content Include="image2.jpg" />
+    <Content Include="Location.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Customer\PurchaseHistory.aspx" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Customer\Wishlist.aspx" />
+    <Content Include="Site3.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Customer\Shopping.aspx" />
     <Content Include="Web.sitemap" />
     <EntityDeploy Include="WebDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -122,6 +141,7 @@
     </EntityDeploy>
     <Content Include="WebDatabase.edmx.diagram">
       <DependentUpon>WebDatabase.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +169,6 @@
       <DependentUpon>WebDatabase.edmx</DependentUpon>
       <LastGenOutput>WebDatabase.cs</LastGenOutput>
     </Content>
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
     <Content Include="white.jpg" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="logo.png" />
@@ -164,19 +182,61 @@
     <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewProduct.aspx.cs">
+    <Compile Include="Artist\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\Faq.aspx.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\Faq.aspx.designer.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\Location.aspx.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\Location.aspx.designer.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\addedcart.aspx.cs">
+      <DependentUpon>addedcart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\addedcart.aspx.designer.cs">
+      <DependentUpon>addedcart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddNewProduct.aspx.designer.cs">
+    <Compile Include="Artist\AddNewProduct.aspx.designer.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ArtistMgtForm.aspx.cs">
+    <Compile Include="Artist\ArtistMgtForm.aspx.cs">
       <DependentUpon>ArtistMgtForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArtistMgtForm.aspx.designer.cs">
+    <Compile Include="Artist\ArtistMgtForm.aspx.designer.cs">
       <DependentUpon>ArtistMgtForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
@@ -187,6 +247,13 @@
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
       <DependentUpon>Default.ascx</DependentUpon>
@@ -349,15 +416,29 @@
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
-    <Compile Include="EditProduct.aspx.cs">
+    <Compile Include="Artist\EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditProduct.aspx.designer.cs">
+    <Compile Include="Artist\EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faq.aspx.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faq.aspx.designer.cs">
+      <DependentUpon>Faq.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Location.aspx.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location.aspx.designer.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -366,6 +447,8 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\cartinventory.cs" />
+    <Compile Include="Models\orderdetl.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
     </Compile>
@@ -376,8 +459,22 @@
       <DependentUpon>WebDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Customer\PurchaseHistory.aspx.cs">
+      <DependentUpon>PurchaseHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\PurchaseHistory.aspx.designer.cs">
+      <DependentUpon>PurchaseHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Seller.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Shopping.aspx.cs">
+      <DependentUpon>Shopping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Shopping.aspx.designer.cs">
+      <DependentUpon>Shopping.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -385,6 +482,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site3.Master.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site3.Master.designer.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>WebDatabase.tt</DependentUpon>
@@ -407,24 +511,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebDatabase.edmx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Customer\Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Customer\Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Wishlist.cs">
+      <DependentUpon>WebDatabase.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
@@ -443,7 +541,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61952</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61952/</IISUrl>
+          <IISUrl>http://localhost:61952</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

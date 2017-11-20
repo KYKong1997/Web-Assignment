@@ -18,6 +18,7 @@ namespace Assignment
         public Customer()
         {
             this.Orders = new HashSet<Order>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public int CustomerID { get; set; }
@@ -26,5 +27,7 @@ namespace Assignment
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }
