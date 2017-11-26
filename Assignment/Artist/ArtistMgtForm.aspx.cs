@@ -17,7 +17,9 @@ namespace Assignment
             
             if (!IsPostBack)
             {
-                Product[] prods = db.Products.Where(x => x.SellerID.Equals(1000)).ToArray();
+                Assignment.User user = db.Users.Where(x => x.username.Equals(User.Identity.Name)).FirstOrDefault();
+                Seller seller = db.Sellers.Where(x => x.email.Equals(user.Email)).FirstOrDefault();
+                Product[] prods = db.Products.Where(x => x.SellerID.Equals(seller.SellerID)).ToArray();
 
                 imgGridView.DataSource = prods;
                 imgGridView.DataBind();

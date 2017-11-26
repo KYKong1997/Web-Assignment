@@ -1,4 +1,5 @@
-﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="Assignment.CreateUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="Assignment.CreateUser" %>
+
 
 
 <!DOCTYPE html>
@@ -13,7 +14,9 @@
          $(document).ready(function () {
              GetCountries();
              GetStates();
-            $("#registerModal").modal('show');
+             $("#registerModal").modal('show');
+            
+            
         });
 
          function GetCountries() {
@@ -57,6 +60,7 @@
                  }
              });
          }
+         
     </script>
     <style>
         html,body{
@@ -101,7 +105,7 @@
                             <tr>
                                 <td>Password:</td>
                                 <td>
-                                    <asp:TextBox ID="password" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
                                     
                                 </td>
 
@@ -109,7 +113,7 @@
                             <tr>
                                 <td>Confirm Password:</td>
                                 <td>
-                                    <asp:TextBox ID="confirmPassword" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="confirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                                     
                                 </td>
                             </tr>
@@ -126,17 +130,17 @@
                                 <tr>
                                 <td>Country:</td>
                                 <td>
-                                    <asp:DropDownList ID="countryDropDown" runat="server" Width="87px" CssClass="ddlCustomerCountry">
-                                       
-                                    </asp:DropDownList>
+                                   <select id="selectCountry" name="selectCountry" class="ddlCustomerCountry">
+
+                                   </select>
+                                    
                                 </td>
                             </tr>
                              <tr>
                                 <td>State:</td>
                                 <td>
-                                    <asp:DropDownList ID="stateDropDown" runat="server" CssClass="txtCustomerState">
-                                      
-                                    </asp:DropDownList>
+                                   <select id="selectState" name="selectState" class="txtCustomerState">
+                                   </select>
                                 </td>
                             </tr>
                              <tr>

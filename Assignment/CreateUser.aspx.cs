@@ -39,12 +39,16 @@ namespace Assignment
             string test = ((createUserWizardStep.ContentTemplateContainer.FindControl("roleDropDown")) as DropDownList).SelectedValue.ToString();
             user.RoleID = ((createUserWizardStep.ContentTemplateContainer.FindControl("roleDropDown")) as DropDownList).SelectedValue.ToString();
             user.Address = (createUserWizardStep.ContentTemplateContainer.FindControl("address") as TextBox).Text;
-            user.State = ((createUserWizardStep.ContentTemplateContainer.FindControl("stateDropDown")) as DropDownList).SelectedValue.ToString();
+           
+            //user.Country = (createUserWizardStep.ContentTemplateContainer.FindControl("selectCountry") as DropDownList).SelectedValue.ToString();
+            //user.State = (createUserWizardStep.ContentTemplateContainer.FindControl("selectState") as DropDownList).SelectedValue.ToString();
+
+            string a = Request.Form["selectCountry"];
             user.Postal_Code = Int32.Parse((createUserWizardStep.ContentTemplateContainer.FindControl("postalCode") as TextBox).Text);
-            user.Country = ((createUserWizardStep.ContentTemplateContainer.FindControl("countryDropDown")) as DropDownList).SelectedValue.ToString();
+            
             user.phoneNumber = (createUserWizardStep.ContentTemplateContainer.FindControl("phoneNumber") as TextBox).Text;
 
-            if (user.RoleID.Equals('C'))
+            if (user.RoleID.Equals("C"))
             {
                 Customer cust = new Customer
                 {

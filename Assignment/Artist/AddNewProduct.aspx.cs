@@ -44,7 +44,8 @@ namespace Assignment
         {
             db = new WebDatabaseEntities1();
             HttpPostedFile imgFile = Request.Files["ctl00$ContentPlaceHolder2$ImageUpload"];
-       
+            Assignment.User user = db.Users.Where(x => x.username.Equals(User.Identity.Name)).FirstOrDefault();
+            Seller seller = db.Sellers.Where(x => x.email.Equals(user.Email)).FirstOrDefault();
             
             Assignment.Product product = new Product();
             product.ProductDescription = productDescriptionTxt.Text;
@@ -53,14 +54,15 @@ namespace Assignment
             product.ProductUpdateDate = DateTime.Now;
             product.ProductQty = Int32.Parse(productQtyTxt.Text);
             string imgPath = Path.GetFullPath(imgFile.FileName);
-            product.SellerID = 1000;//hardcore
-            string rootPath = Server.MapPath("Images/");
+            product.SellerID = seller.SellerID;
+            string rootPath = Server.MapPath("../Images/");
            
             db.Products.Add(product);
             db.SaveChanges();
             Product lastProd = (from x in db.Products orderby x.ProductID descending select x).FirstOrDefault();
             int newID = lastProd.ProductID;
             product.ProductImage = "/Images/" + newID + ".jpg";
+
             imgFile.SaveAs(rootPath + newID + ".jpg");
             lastProd.ProductImage = "/Images/" + newID + ".jpg";
             db.SaveChanges();

@@ -60,7 +60,7 @@ namespace Assignment
                 product.ProductUpdateDate = DateTime.Now;
                 string imgPath = Path.GetFullPath(imgFile.FileName);
 
-                string rootPath = Server.MapPath("Images/");
+                string rootPath = Server.MapPath("../Images/");
                 string newName = prodIDLabel.Text + ".jpg";
                 imgFile.SaveAs(rootPath + id + ".jpg");
 
